@@ -3,8 +3,8 @@
 const inquirer = require("inquirer")
 const fs = require("fs")
 const ncp = require("ncp")
-const packageSkeleton = require("./skeleton/package")
-const serverSkeleton = require("./skeleton/server")
+const packageSkeleton = require("./../skeleton/package")
+const serverSkeleton = require("./../skeleton/server")
 
 const makeError = e => {
     console.log(e)
