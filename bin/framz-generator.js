@@ -74,15 +74,15 @@ Enter into app folder, and run 'npm install' to install dependancies.`)
                 react: givenData.custom.indexOf("React Simple App") !== -1,
             }
 
-            fs.writeFileSync(`${data.name}/package.json`, packageSkeleton(data))
-            fs.copyFileSync(`${__dirname}/skeleton/webpack.config.js`, `${data.name}/webpack.config.js`)
-            fs.copyFileSync(`${__dirname}/skeleton/jest.config.js`, `${data.name}/jest.config.js`)
-            fs.copyFileSync(`${__dirname}/skeleton/.npmignore`, `${data.name}/.npignore`)
+            fs.writeFileSync(`${data.name}/../package.json`, packageSkeleton(data))
+            fs.copyFileSync(`${__dirname}/../skeleton/webpack.config.js`, `${data.name}/webpack.config.js`)
+            fs.copyFileSync(`${__dirname}/../skeleton/jest.config.js`, `${data.name}/jest.config.js`)
+            fs.copyFileSync(`${__dirname}/../skeleton/.npmignore`, `${data.name}/.npignore`)
 
             if (data.react === true) {
                 promises.push(
                     new Promise((_resolve, _reject) => {
-                        ncp(`${__dirname}/skeleton/public`, `${data.name}/public`, error => {
+                        ncp(`${__dirname}/../skeleton/public`, `${data.name}/public`, error => {
                             if (error) {
                                 return _reject(error)
                             }
@@ -92,7 +92,7 @@ Enter into app folder, and run 'npm install' to install dependancies.`)
                 )
                 promises.push(
                     new Promise((_resolve, _reject) => {
-                        ncp(`${__dirname}/skeleton/src`, `${data.name}/src`, error => {
+                        ncp(`${__dirname}/../skeleton/src`, `${data.name}/src`, error => {
                             if (error) {
                                 return _reject(error)
                             }
