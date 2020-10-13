@@ -74,10 +74,10 @@ Enter into app folder, and run 'npm install' to install dependancies.`)
                 react: givenData.custom.indexOf("React Simple App") !== -1,
             }
 
-            fs.writeFileSync(`${data.name}/../package.json`, packageSkeleton(data))
+            fs.writeFileSync(`${data.name}/package.json`, packageSkeleton(data))
             fs.copyFileSync(`${__dirname}/../skeleton/webpack.config.js`, `${data.name}/webpack.config.js`)
             fs.copyFileSync(`${__dirname}/../skeleton/jest.config.js`, `${data.name}/jest.config.js`)
-            fs.copyFileSync(`${__dirname}/../skeleton/.npmignore`, `${data.name}/.npignore`)
+            fs.copyFileSync(`${__dirname}/../skeleton/.npmignore`, `${data.name}/.npmignore`)
 
             if (data.react === true) {
                 promises.push(
