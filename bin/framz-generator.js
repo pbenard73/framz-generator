@@ -77,7 +77,6 @@ Enter into app folder, and run 'npm install' to install dependancies.`)
             fs.writeFileSync(`${data.name}/package.json`, packageSkeleton(data))
             fs.copyFileSync(`${__dirname}/../skeleton/webpack.config.js`, `${data.name}/webpack.config.js`)
             fs.copyFileSync(`${__dirname}/../skeleton/jest.config.js`, `${data.name}/jest.config.js`)
-            fs.copyFileSync(`${__dirname}/../skeleton/.npmignore`, `${data.name}/.npmignore`)
 
             if (data.react === true) {
                 promises.push(
