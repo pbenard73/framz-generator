@@ -1,6 +1,6 @@
 {
   "name": "framz-generator",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "",
   "bin": {
     "framz": "./bin/framz-generator.js"
